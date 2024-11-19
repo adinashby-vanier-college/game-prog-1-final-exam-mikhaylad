@@ -14,5 +14,16 @@ public class Canon extends Actor
      */
     public void act()
     {
+        shoot();
+    }
+
+    /**
+     * Method to shoot canonballs
+     */
+    public void shoot()
+    {
+        Canon canon =  new  Canon();
+        CannonBall ball =  new  CannonBall();
+        getWorld().addObject(ball, getX(), getY());
     }
 }

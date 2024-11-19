@@ -13,7 +13,36 @@
             <javadoc xml:space="preserve">Act - do whatever the Hero wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
             <throws/>
-            <body/>
+            <body>
+                <call expression="moveAround()" expression-java="moveAround()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="moveAround" enable="true">
+            <javadoc xml:space="preserve">Method to move lady bug</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="Greenfoot.isKeyDown(&quot;left&quot;)" condition-java="Greenfoot.isKeyDown(&quot;left&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(-3)" expression-java="turn(-3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;right&quot;)" condition-java="Greenfoot.isKeyDown(&quot;right&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(3)" expression-java="turn(3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;up&quot;)" condition-java="Greenfoot.isKeyDown(&quot;up&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;down&quot;)" condition-java="Greenfoot.isKeyDown(&quot;down&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="move(-3)" expression-java="move(-3)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
         </method>
     </methods>
 </class>

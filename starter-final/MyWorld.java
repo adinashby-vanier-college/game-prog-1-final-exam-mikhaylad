@@ -82,5 +82,15 @@ public class MyWorld extends World
         cannonBall6.setLocation(616, 177);
         cannonBall.setLocation(220, 103);
         cannonBall2.setLocation(338, 94);
+        removeObject(cannonBall);
+        removeObject(cannonBall2);
+        removeObject(cannonBall9);
+        removeObject(cannonBall8);
+        removeObject(cannonBall5);
+        removeObject(cannonBall7);
+        removeObject(cannonBall10);
+        removeObject(cannonBall6);
+        removeObject(cannonBall4);
+        removeObject(cannonBall3);
     }
 }

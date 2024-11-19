@@ -83,6 +83,16 @@ That is: create the initial objects and add them to the world.</javadoc>
                 <call expression="cannonBall6.setLocation(616,177)" expression-java="cannonBall6.setLocation(616, 177)" enable="true"/>
                 <call expression="cannonBall.setLocation(220,103)" expression-java="cannonBall.setLocation(220, 103)" enable="true"/>
                 <call expression="cannonBall2.setLocation(338,94)" expression-java="cannonBall2.setLocation(338, 94)" enable="true"/>
+                <call expression="removeObject(cannonBall)" expression-java="removeObject(cannonBall)" enable="true"/>
+                <call expression="removeObject(cannonBall2)" expression-java="removeObject(cannonBall2)" enable="true"/>
+                <call expression="removeObject(cannonBall9)" expression-java="removeObject(cannonBall9)" enable="true"/>
+                <call expression="removeObject(cannonBall8)" expression-java="removeObject(cannonBall8)" enable="true"/>
+                <call expression="removeObject(cannonBall5)" expression-java="removeObject(cannonBall5)" enable="true"/>
+                <call expression="removeObject(cannonBall7)" expression-java="removeObject(cannonBall7)" enable="true"/>
+                <call expression="removeObject(cannonBall10)" expression-java="removeObject(cannonBall10)" enable="true"/>
+                <call expression="removeObject(cannonBall6)" expression-java="removeObject(cannonBall6)" enable="true"/>
+                <call expression="removeObject(cannonBall4)" expression-java="removeObject(cannonBall4)" enable="true"/>
+                <call expression="removeObject(cannonBall3)" expression-java="removeObject(cannonBall3)" enable="true"/>
             </body>
         </method>
     </methods>
