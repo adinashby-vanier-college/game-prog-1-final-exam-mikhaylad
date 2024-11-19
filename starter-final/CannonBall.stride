@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class name="CannonBall" extends="Actor" enable="true" strideversion="1">
+<class name="CannonBall" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>
     <imports>
         <import target="java.util.*" enable="true"/>
@@ -9,11 +9,50 @@
     <fields/>
     <constructors/>
     <methods>
-        <method access="public" type="void" name="act" enable="true">
+        <method access="public" type="void" type-java="void" name="act" enable="true">
             <javadoc xml:space="preserve">Act - do whatever the CannonBall wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
             <throws/>
-            <body/>
+            <body>
+                <call expression="gameLost()" expression-java="gameLost()" enable="true"/>
+                <call expression="moveBall()" expression-java="moveBall()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="gameLost" enable="true">
+            <javadoc xml:space="preserve">Game is lost method</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Actor" type-java="Actor" name="ladyBug" value="getOneIntersectingObject(Ladybug.class)" value-java="getOneIntersectingObject(Ladybug.class)" enable="true"/>
+                <if condition="ladyBug!=null" condition-java="ladyBug != null" enable="true">
+                    <ifStatements>
+                        <variable type="World" type-java="World" name="world" value="getWorld()" value-java="getWorld()" enable="true"/>
+                        <call expression="world.removeObject(ladyBug)" expression-java="world.removeObject(ladyBug)" enable="true"/>
+                        <call expression="Greenfoot.playSound(&quot;lose.wav&quot;)" expression-java="Greenfoot.playSound(&quot;lose.wav&quot;)" enable="true"/>
+                        <call expression="transitionToGameOverWorld()" expression-java="transitionToGameOverWorld()" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="transitionToGameOverWorld" enable="true">
+            <javadoc xml:space="preserve">Transition to game over screen</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="World" type-java="World" name="gameOverWorld" value="new GameOverScreen()" value-java=" new GameOverScreen()" enable="true"/>
+                <call expression="Greenfoot.setWorld(gameOverWorld)" expression-java="Greenfoot.setWorld(gameOverWorld)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="moveBall" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Canon" type-java="Canon" name="canon" value="new Canon()" value-java=" new Canon()" enable="true"/>
+                <variable type="CannonBall" type-java="CannonBall" name="ball" value="new CannonBall()" value-java=" new CannonBall()" enable="true"/>
+                <call expression="ball.turn(canon.getRotation())" expression-java="ball.turn(canon.getRotation())" enable="true"/>
+                <call expression="move(3)" expression-java="move(3)" enable="true"/>
+            </body>
         </method>
     </methods>
 </class>

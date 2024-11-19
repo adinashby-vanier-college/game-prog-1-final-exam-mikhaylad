@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=GameOverScreen
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=GameOverScreen()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameOverScreen.\r\n
+comment2.params=message\ x\ y
+comment2.target=void\ showText(java.lang.String,\ int,\ int)
+comment2.text=\r\n\ Show\ text\r\n
+comment3.params=
+comment3.target=void\ loseSound()
+comment3.text=\r\n\ Play\ losing\ sound\r\n
+numComments=4

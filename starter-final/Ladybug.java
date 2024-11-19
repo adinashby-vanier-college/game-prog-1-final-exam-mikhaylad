@@ -14,5 +14,25 @@ public class Ladybug extends Actor
      */
     public void act()
     {
+        moveAround();
+    }
+
+    /**
+     * Method to move lady bug
+     */
+    public void moveAround()
+    {
+        if (Greenfoot.isKeyDown("left")) {
+            turn(-3);
+        }
+        if (Greenfoot.isKeyDown("right")) {
+            turn(3);
+        }
+        if (Greenfoot.isKeyDown("up")) {
+            move(3);
+        }
+        if (Greenfoot.isKeyDown("down")) {
+            move(-3);
+        }
     }
 }

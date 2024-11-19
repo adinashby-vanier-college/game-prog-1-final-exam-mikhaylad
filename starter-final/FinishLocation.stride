@@ -13,7 +13,33 @@
             <javadoc xml:space="preserve">Act - do whatever the FinishLocation wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
             <throws/>
-            <body/>
+            <body>
+                <call expression="gameIsWon()" expression-java="gameIsWon()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="gameIsWon" enable="true">
+            <javadoc xml:space="preserve">Method for won game</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Actor" type-java="Actor" name="ladyBug" value="getOneIntersectingObject(Ladybug.class)" value-java="getOneIntersectingObject(Ladybug.class)" enable="true"/>
+                <if condition="ladyBug!=null" condition-java="ladyBug != null" enable="true">
+                    <ifStatements>
+                        <variable type="World" type-java="World" name="world" value="getWorld()" value-java="getWorld()" enable="true"/>
+                        <call expression="world.removeObject(ladyBug)" expression-java="world.removeObject(ladyBug)" enable="true"/>
+                        <call expression="transitionToGameWonWorld()" expression-java="transitionToGameWonWorld()" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="transitionToGameWonWorld" enable="true">
+            <javadoc xml:space="preserve">Method to transition to winning screen</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="World" type-java="World" name="gameWonWorld" value="new WinningScreen()" value-java=" new WinningScreen()" enable="true"/>
+                <call expression="Greenfoot.setWorld(gameWonWorld)" expression-java="Greenfoot.setWorld(gameWonWorld)" enable="true"/>
+            </body>
         </method>
     </methods>
 </class>
